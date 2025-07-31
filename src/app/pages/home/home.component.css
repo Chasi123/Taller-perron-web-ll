@@ -1,73 +1,221 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
-.bg-red{
-    background-color: #f32838;
+.bg-red {
+  background-color: #f32838;
 }
-.bg-white{
-    background-color: #ffffff;
-
+.bg-white {
+  background-color: #ffffff;
 }
-.bg-black{
-    background-color: #000000;
-
+.bg-black {
+  background-color: #000000;
 }
-.bg-blue{
-    background-color: #021879;
-
+.bg-blue {
+  background-color: #021879;
 }
-.bg-green{
-    background-color: #36ab2f;
-
+.bg-green {
+  background-color: #36ab2f;
 }
 
-html, body{
-    height: 100vh;
-    overflow: hidden;
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
 }
 
-.row{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.row::after, .row::before {
-    box-sizing: border-box;
+.row::after,
+.row::before {
+  box-sizing: border-box;
 }
 
-.col-6{
-    width: 50%;
-    position: relative;
+.col-6 {
+  width: 50%;
+  position: relative;
 }
 
-.slider{
-    overflow: hidden;
-    height: 500%;
+.slider {
+  overflow: hidden;
+  height: 500%;
 }
 
-.fullheight{
-    height: 100vh;
+.fullheight {
+  height: 100vh;
 }
 
-.product-img{
+.product-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.img-wrapper {
+  height: auto;
+  width: 80%;
+  transform: rotate(-35deg);
+}
+
+.more-images {
+  position: absolute;
+  right: 90px;
+  top: 50%;
+}
+
+.more-images-item {
+  height: fit-content;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 5px 0;
+}
+
+.more-images-item img {
+  height: auto;
+  width: 80px;
+  border-radius: 15px;
+  transition: 1s;
+}
+
+.more-images-item:hover img {
+  transform-style: scale(1.5);
+}
+
+.more-images-item:hover {
+  cursor: pointer;
+}
+
+.product-info {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+    padding: 0 10%;
+    color: #bdc3c7;
 }
 
-.img-wrapper{
-    height: auto;
-    width: 80%;
-    transform: rotate(-35deg);
+.info-wrapper{
+    margin: auto;
+    position: relative;
+    text-align: right;
 }
+
+.product-name h2{
+    font-weight: 900;
+    font-size: xxx-large;
+    color: #000000;
+}
+
+.product-price{
+    font-weight: 900;
+    font-size: xx-large;
+    color: #000000;
+}
+
+.product-price span{
+    font-size: large;
+    color: #707676;
+}
+
+.product-size{
+    margin: 20px 0;
+}
+
+.size-wrapper{
+    display: flex;
+    flex-flow: row-reverse;
+    padding: 5px;
+}
+
+.size-wrapper div{
+    font-weight: 900;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 13px;
+    border: 2px solid #bdc3c7;
+    color: #bdc3c7;
+}
+
+.size-wrapper div.active{
+    border: 2px solid #000000;
+    color: #000000;
+}
+
+.size-wrapper div:hover{
+    border: 2px solid #000000;
+    color: #000000;
+    cursor: pointer;
+}
+
+.color-wrapper{
+    display: flex;
+    flex-flow: row-reverse;
+    padding: 5px;
+}
+
+.color-wrapper > div{
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 3px;
+    border: 2px solid #bdc3c7;
+    background-color: #bdc3c7;
+}
+
+.color-wrapper > div.active{
+    border: 2px solid #000000;
+}
+
+.color-wrapper > div:hover{
+    cursor: pointer;
+    border: 2px solid #000000;
+}
+
+.color-wrapper > div > div{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.product-description{
+    margin: 60px 0;
+    text-align: justify;
+    font-weight: 600;
+}
+
+.button > button{
+    font-weight: 900;
+    font-size: x-large;
+    padding: 15px 60px;
+    border-radius: 30px;
+    border: 2px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    transition: .5s;
+}
+
+.button > button:hover{
+    cursor: pointer;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.img-col{
+    border-bottom-left-radius: 100%;
+}
+
