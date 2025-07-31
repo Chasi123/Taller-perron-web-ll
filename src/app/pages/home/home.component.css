@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+.bg-red{
+    background-color: #f32838;
+}
+.bg-white{
+    background-color: #ffffff;
+
+}
+.bg-black{
+    background-color: #000000;
+
+}
+.bg-blue{
+    background-color: #021879;
+
+}
+.bg-green{
+    background-color: #36ab2f;
+
+}
+
+html, body{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.row::after, .row::before {
+    box-sizing: border-box;
+}
+
+.col-6{
+    width: 50%;
+    position: relative;
+}
+
+.slider{
+    overflow: hidden;
+    height: 500%;
+}
+
+.fullheight{
+    height: 100vh;
+}
+
+.product-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.img-wrapper{
+    height: auto;
+    width: 80%;
+    transform: rotate(-35deg);
+}
