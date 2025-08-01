@@ -2,15 +2,16 @@
 @import url('https://fonts.cdnfonts.com/css/poppins');
 
 
-.banner{
+.banner {
     width: 100%;
     height: 100vh;
     text-align: center;
     overflow: hidden;
     position: relative;
+    /*background-image: url();*/
 }
 
-.banner .slider{
+.banner .slider {
     position: absolute;
     width: 200px;
     height: 250px;
@@ -19,31 +20,33 @@
     transform-style: preserve-3d;
     transform: perspective(1000px);
     animation: autoRun 20s linear infinite;
+    z-index: 2;
 }
 
 @keyframes autoRun {
-    from{
+    from {
         transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
-    }to{
+    }
+
+    to {
         transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
     }
 }
 
-.banner .slider .item{
+.banner .slider .item {
     position: absolute;
     inset: 0 0 0 0;
     transform:
-        rotateY(calc( (var(--position) - 1 )*(360 / var(--quantity))* 1deg))
-        translateZ(550px);
+        rotateY(calc((var(--position) - 1)*(360 / var(--quantity))* 1deg)) translateZ(550px);
 }
 
-.banner .slider .item img{
+.banner .slider .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.banner .content{
+.banner .content {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -55,39 +58,160 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
 }
 
-.banner .content h1{
+.banner .content h1 {
     font-family: 'ICA Rubrik';
     font-size: 16em;
     line-height: 1em;
     color: #25283B;
+    position: relative;
 }
 
-.banner .content h1::after{
+.banner .content h1::after {
     position: absolute;
     inset: 0 0 0 0;
     content: attr(data-content);
     z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
 }
 
-.banner .content .author{
+.banner .content .author {
     font-family: Poppins;
     text-align: right;
     max-width: 200px;
 }
 
-.banner .content h2{
+.banner .content h2 {
     font-size: 3em;
 }
-.banner .content .model{
-    background-image: url(https://i.postimg.cc/8zMXkFnV/imagen-2025-07-31-123533964-removebg-preview.png);
+
+.banner .content .model {
+    background-image: url(https://i.postimg.cc/RFfjH64C/imagen-2025-08-01-051142790-removebg-preview.png);
     width: 100%;
     height: 75vh;
     position: absolute;
     bottom: 0;
     left: 0;
-    background-size: auto 130%;   
+    background-size: auto 130%;
     background-repeat: no-repeat;
     background-position: top center;
+    z-index: 1;
+}
+
+.cartas {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+}
+
+.parent {
+    width: 300px;
+    padding: 20px;
+    perspective: 1000px;
+
+}
+
+.card {
+    padding-top: 50px;
+    border-radius: 10px;
+    border: 3px solid rgb(255, 255, 255);
+    transform-style: preserve-3d;
+
+    background-size: 60px 60px;
+    background-position: 0 0, 0 0;
+    background-color: #f0f0f0;
+    width: 100%;
+    box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.card:hover {
+    background-position: -100px 100px, -100px 100px;
+    transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.content-box {
+    background: #f5f5f5;
+    border-radius: 10px 100px 10px 10px;
+    transition: all 0.5s ease-in-out;
+    padding: 60px 25px 25px 25px;
+    transform-style: preserve-3d;
+}
+
+.content-box .card-title {
+    display: inline-block;
+    color: black;
+    font-size: 25px;
+    font-weight: 900;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 50px);
+}
+
+.content-box .card-title:hover {
+    transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .card-content {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #000;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 30px);
+}
+
+.content-box .card-content:hover {
+    transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .see-more {
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+    font-weight: 900;
+    font-size: 9px;
+    text-transform: uppercase;
+    color: rgb(46, 48, 49);
+    background: rgb(148, 142, 142);
+    padding: 0.5rem 0.7rem;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 20px);
+}
+
+.content-box .see-more:hover {
+    transform: translate3d(0px, 0px, 60px);
+}
+
+.date-box {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 60px;
+    width: 60px;
+    background: white;
+    border: 1px solid rgb(94, 97, 99);
+    padding: 10px;
+    transform: translate3d(0px, 0px, 80px);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+}
+
+.date-box span {
+    display: block;
+    text-align: center;
+}
+
+.date-box .month {
+    color: rgb(118, 120, 121);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.date-box .date {
+    font-size: 20px;
+    font-weight: 900;
+    color: rgb(67, 74, 77);
 }
