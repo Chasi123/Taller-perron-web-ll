@@ -1,10 +1,10 @@
 .footer-glass {
-  background: rgba(15, 23, 42, 0.3); /* azul oscuro translúcido */
+  background: rgba(35, 35, 36, 0.3); /* azul oscuro translúcido */
   backdrop-filter: blur(20px);
-  color: #ffffffcc;
+  color: #242222cc;
   padding: 2rem 1rem 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 -2px 20px #00fff760;
+  border-top: 1px solid rgba(148, 145, 145, 0.1);
+  box-shadow: 0 0px 20px #c0cecd60;
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -30,23 +30,23 @@
 .footer-logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #00fff7;
-  text-shadow: 0 0 8px #00fff7, 0 0 14px #00fff7;
+  color: #242525;
+  text-shadow: 0 0 8px #3f4140, 0 0 14px #2f3131;
 }
 
 .footer-desc {
   margin-top: 0.5rem;
   font-size: 0.95rem;
-  color: #e2e8f0;
+  color: #1e1e1f;
 }
 
 /* Enlaces */
 .footer-links h3,
 .footer-contact h3 {
-  color: #00fff7;
+  color: #000000;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 6px #00fff7;
+  text-shadow: 0 0 6px #343535;
 }
 
 .footer-links ul {
@@ -58,15 +58,15 @@
   display: block;
   margin-bottom: 0.4rem;
   text-decoration: none;
-  color: #ffffffcc;
+  color: #141414cc;
   font-size: 0.95rem;
   transition: all 0.3s ease;
-  text-shadow: 0 0 4px #00fff7;
+  text-shadow: 0 0 4px #000000;
 }
 
 .footer-link:hover {
-  color: #00fff7;
-  text-shadow: 0 0 6px #00fff7, 0 0 10px #00fff7;
+  color: #141414;
+  text-shadow: 0 0 6px #121313, 0 0 10px #3a3a3a;
 }
 
 /* Contacto */
@@ -82,5 +82,5 @@
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 1rem;
   font-size: 0.85rem;
-  color: #cbd5e1;
+  color: #141414;
 }
