@@ -407,3 +407,37 @@ transition-delay: 1s;
 transition-delay: 1.2s;
 }
 
+
+
+
+
+
+
+
+/* galeria */
+
+.galeria > img{
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 0px 30px #000;
+}
+
+.galeria{
+  display: grid;
+  grid-template-columns: 
+  repeat(
+    auto-fit,
+    minmax(150px, 1fr)
+    );
+    gap: 32px;
+    margin-top: 50px;
+    margin: 25px;
+}
+
+
+.galeria img:hover {
+    transform: scale(1.08); 
+    transition: .5s;
+    box-shadow: 0px 0px 40px #000;
+}
