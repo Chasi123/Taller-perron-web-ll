@@ -1,10 +1,10 @@
 .footer-glass {
-  background: rgba(35, 35, 36, 0.3); /* azul oscuro translúcido */
+  background: rgba(0, 0, 0, 0.801); /* azul oscuro translúcido */
   backdrop-filter: blur(20px);
   color: #242222cc;
   padding: 2rem 1rem 1rem;
-  border-top: 1px solid rgba(148, 145, 145, 0.1);
-  box-shadow: 0 0px 20px #c0cecd60;
+  border-top: 1px solid rgba(70, 69, 69, 0.795);
+  box-shadow: 0 0px 20px rgb(70, 69, 69);
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -30,23 +30,23 @@
 .footer-logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #242525;
-  text-shadow: 0 0 8px #3f4140, 0 0 14px #2f3131;
+  color: #d6d6d6;
+  text-shadow: 0 0 8px #b0b4b2, 0 0 14px #96a3a3;
 }
 
 .footer-desc {
   margin-top: 0.5rem;
   font-size: 0.95rem;
-  color: #1e1e1f;
+  color: #bababd;
 }
 
 /* Enlaces */
 .footer-links h3,
 .footer-contact h3 {
-  color: #000000;
+  color: rgb(255, 255, 255);
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 6px #343535;
+  text-shadow: 0 0 6px #484b4b;
 }
 
 .footer-links ul {
@@ -58,21 +58,23 @@
   display: block;
   margin-bottom: 0.4rem;
   text-decoration: none;
-  color: #141414cc;
+  color: #e9e1e1d5;
   font-size: 0.95rem;
   transition: all 0.3s ease;
   text-shadow: 0 0 4px #000000;
 }
 
 .footer-link:hover {
-  color: #141414;
-  text-shadow: 0 0 6px #121313, 0 0 10px #3a3a3a;
+  color: #696666;
+  text-shadow: 0 0 6px #898d8d, 0 0 10px #867f7f;
+  cursor: pointer;
 }
 
 /* Contacto */
 .footer-contact p {
   font-size: 0.9rem;
   margin-bottom: 0.3rem;
+  color: #e9e1e1d5; 
 }
 
 /* Parte inferior */

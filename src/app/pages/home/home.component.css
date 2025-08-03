@@ -471,7 +471,7 @@ transition-delay: 1.2s;
 .cartas{
   display: flex;
   flex-direction: row;
-  margin-left: 5%;
+    
 }
 .parent {
   width: 300px;
