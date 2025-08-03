@@ -72,6 +72,8 @@ body {
   pointer-events: none;
   transition: opacity 1s ease;
   display: flex; 
+  overflow: hidden;
+
 }
 
 .slide.active {
