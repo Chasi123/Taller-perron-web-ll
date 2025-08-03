@@ -72,6 +72,8 @@ body {
   pointer-events: none;
   transition: opacity 1s ease;
   display: flex; 
+  overflow: hidden;
+
 }
 
 .slide.active {
@@ -471,7 +473,7 @@ transition-delay: 1.2s;
 .cartas{
   display: flex;
   flex-direction: row;
-  margin-left: 5%;
+    
 }
 .parent {
   width: 300px;
