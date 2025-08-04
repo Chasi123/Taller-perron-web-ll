@@ -1,0 +1,31 @@
+<div class="body">
+    <div class="flex justify-center items-center min-h-screen bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-6">
+  <div class="w-full max-w-6xl rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xl overflow-hidden">
+    <table class="min-w-full text-white">
+      <thead>
+        <tr class="bg-white/10 text-white uppercase text-sm font-semibold">
+          <th class="p-5 text-left">Nombre</th>
+          <th class="p-5 text-left">Apellido</th>
+          <th class="p-5 text-left">Email</th>
+          <th class="p-5 text-left">Dirección</th>
+          <th class="p-5 text-left">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(cliente of clientes; track $index){
+        <tr class="odd:bg-white/5 even:bg-white/10">
+          <td class="p-5">{{cliente.nombre}}</td>
+          <td class="p-5">{{cliente.apellido}}</td>
+          <td class="p-5">{{cliente.email}}</td>
+          <td class="p-5">{{cliente.direccion}}</td>
+          <td class="p-5">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded mr-2" [routerLink]="['/clientes', cliente.id]">Editar</button>
+            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" (click)="eliminar(cliente.id)">Eliminar</button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

@@ -1,6 +1,29 @@
 @import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
 @import url('https://fonts.cdnfonts.com/css/poppins');
 
+.body {
+    background-color: #D2D2D2;
+    background-image:
+        repeating-linear-gradient(to right, transparent 0 100px,
+            #25283b22 100px 101px),
+        repeating-linear-gradient(to bottom, transparent 0 100px,
+            #25283b22 100px 101px);
+}
+
+.body::before {
+    position: absolute;
+    width: min(2000px, 100vw);
+    top: 10%;
+    left: 50%;
+    height: 90%;
+    transform: translateX(-50%);
+    content: '';
+    background-image: url(https://i.postimg.cc/kGVrcVZG/bg-1.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    pointer-events: none;
+}
 
 .banner {
     width: 100%;
@@ -89,7 +112,7 @@
 }
 
 .banner .content .model {
-    background-image: url(https://i.postimg.cc/RFfjH64C/imagen-2025-08-01-051142790-removebg-preview.png);
+    background-image: url(https://i.postimg.cc/mk4XcPsK/model.png);
     width: 100%;
     height: 75vh;
     position: absolute;

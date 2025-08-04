@@ -1,0 +1,27 @@
+<div class="body">
+    <header>
+    <div class="left">
+        <h1>Actualizar</h1>
+        <img src="https://i.postimg.cc/52hb7MWp/imagen-2025-08-04-004615740.png" alt="">
+    </div>
+</header>
+<section class="formulario">
+    <form (ngSubmit)="editar(formulario)" #formulario="ngForm" class="form">
+        <h2>Actualizacion De Datos</h2>
+        <label for="nombre">Nombre:</label>
+        <input [(ngModel)]="cliente.nombre"  type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido">Apellido:</label>
+        <input [(ngModel)]="cliente.apellido" type="text" id="apellido" name="apellido" required>
+
+        <label for="direccion">Direccion:</label>
+        <input [(ngModel)]="cliente.direccion" type="direccion" id="direccion" name="direccion" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input [(ngModel)]="cliente.email" type="email" id="email" name="email" required>
+
+        <button type="submit">Actualizar</button>
+        
+    </form>
+</section>
+</div>

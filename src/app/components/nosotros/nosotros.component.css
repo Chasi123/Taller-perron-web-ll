@@ -155,6 +155,7 @@
     height: 140px;
     object-fit: cover;
     border-radius: 50%;
+    margin-left: 60px;
 }
 
 .fondo {
@@ -165,7 +166,8 @@
     background-attachment: fixed;
     background-position: center;
     padding-top: 130px;
-
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .sesgoabajo-unico {
@@ -194,25 +196,6 @@
     font-weight: 300;
     margin-bottom: 64px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* car */
 .card-servicio {

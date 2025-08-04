@@ -1,12 +1,26 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ClientesService } from '../../servicios/clientes.service';
 
 @Component({
   selector: 'app-contacto',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './contacto.component.html',
   styleUrl: './contacto.component.css'
 })
 export class ContactoComponent {
 
+  constructor(private servicioCliente: ClientesService){}
+
+    nombre: string='';
+    apellido:string='';
+    direccion:string='';
+    email:string='';
+
+  agregarCliente(formulario:any){
+    this.servicioCliente.guardarCliente(formulario.value).subscribe(()=>{
+      window.location.reload();
+    })
+  }
 }
