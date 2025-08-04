@@ -22,13 +22,13 @@ header{
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding-top: 50px;
+    padding-top: 80px;
     height: 0px;
     flex-wrap: wrap;
 }
 header h1{
     font-family: "Karantina", system-ui;
-    font-size: 16vw;
+    font-size: 12vw;
     line-height: 0.8em;
 }
 header .author{
@@ -80,7 +80,7 @@ header .author img{
         var(--url) var(--left),
         url(https://i.postimg.cc/3NjSR4Zq/mockup.png) 0 0;
     background-size: auto 100%;
-    width: 280px;
+    width: 200px;
     aspect-ratio: 2 / 4;
     background-blend-mode: multiply;
     transition: 0.8s;
@@ -110,23 +110,23 @@ header .author img{
 }
 .rock img:nth-child(1){
     position: absolute;
-    height: 170px;
+    height: 150px;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 30px;
+    bottom: 60px;
     transition: 0.7s;
     z-index: 1;
 }
 .rock img:nth-child(2){
     position: absolute;
-    height: 50%;
+    height: 49%;
     left: 0;
     bottom: 0;
     transition: 0.7s;
 }
 .rock img:nth-child(3){
     position: absolute;
-    height: 100%;
+    height: 90%;
     right: 0;
     bottom: -100px;
     rotate: -25deg;
