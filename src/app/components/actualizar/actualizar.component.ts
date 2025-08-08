@@ -31,7 +31,7 @@ export class ActualizarComponent {
   editar(formulario:any):void{
     const clienteActualizado={...formulario.value, id:this.id};
     this.servicioCliente.editarCliente(this.id, clienteActualizado).subscribe(() =>{
-      this.router.navigate(['/clientes']);
+      this.router.navigate(['/lista']);
   });
 }
 }
