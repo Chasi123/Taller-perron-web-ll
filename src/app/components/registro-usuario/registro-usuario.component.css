@@ -1,6 +1,7 @@
 body{
   margin: 0;
   font-size: 5em;
+  background-image: url(file:///C:/Users/jitaz/Downloads/Lundev.svg);
 }
 .banner {
   height: 100vh;
@@ -84,6 +85,7 @@ svg path {
   transition: transform 0.5s ease;
 }
 
+/* Ocultar y mostrar formularios según el switch */
 #switch:checked ~ .sign-up-container {
   display: block;
 }

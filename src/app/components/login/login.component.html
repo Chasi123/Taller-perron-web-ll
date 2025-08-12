@@ -1,21 +1,19 @@
 <body>
-    <div class="container">
-        <div class="drop">
-            <div class="content">
-                <h2 class='animate__heartBeat'>Login</h2>
-                <form>
-                    <div class="input-box" >
-                        <input type="text" placeholder="Username" >
-                    </div>
-                    <div class="input-box" >
-                        <input type="password" placeholder="Password">
-                    </div>
-                    <div class="input-box" >
-                        <input type="submit" value="Login" href='#'>
-                    </div>
-                </form>
+    <div class="banner">
+        <div class="form-container">
+            <input type="checkbox" id="switch" hidden>
+
+            <div class="log-in-container">
+                <h2>Iniciar Sesión</h2>
+                <label for="email-login">Usuario</label>
+                <input [(ngModel)]="usuario" type="usuario" id="usuario" placeholder="Ingresa tu usuario">
+
+                <label for="password-login">Contraseña</label>
+                <input [(ngModel)]="password" type="password" id="password-login" placeholder="Ingresa tu contraseña">
+
+                <button type="submit">Entrar</button>
+                <a routerLink='/register' routerLinkActive="router-link-active" >¿No tienes cuenta? <label  for="switch" style="cursor:pointer; color:#ffd;">Regístrate</label></a>
             </div>
         </div>
-        <a href="#" class='btn'>Forgot Password</a>
     </div>
-    </body>
+</body>

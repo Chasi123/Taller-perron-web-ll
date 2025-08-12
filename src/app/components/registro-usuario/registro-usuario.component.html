@@ -1,0 +1,21 @@
+<body>
+    <div class="banner">
+        <div class="form-container">
+            <input type="checkbox" id="switch" hidden>
+            <div class="sign-up-container">
+                <h2>Registrarse</h2>
+                <label for="name">Nombre</label>
+                <input type="text" id="name" placeholder="Tu nombre">
+
+                <label for="email-signup">Correo</label>
+                <input type="email" id="email-signup" placeholder="Ingresa tu correo">
+
+                <label for="password-signup">Contraseña</label>
+                <input type="password" id="password-signup" placeholder="Crea una contraseña">
+
+                <button type="submit">Crear Cuenta</button>
+                <a routerLink='/login' routerLinkActive="router-link-active">¿Ya tienes cuenta? <label for="switch" style="cursor:pointer; color:#ffd;">Inicia sesión</label></a>
+            </div>
+        </div>
+    </div>
+</body>
