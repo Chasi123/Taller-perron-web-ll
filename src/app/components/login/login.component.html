@@ -1,19 +1,34 @@
 <body>
     <div class="banner">
         <div class="form-container">
-            <input type="checkbox" id="switch" hidden>
+            <form (ngSubmit)="login()" #loginForm="ngForm">
+                <div class="log-in-container">
+                    <h2>Iniciar Sesión</h2>
 
-            <div class="log-in-container">
-                <h2>Iniciar Sesión</h2>
-                <label for="email-login">Usuario</label>
-                <input [(ngModel)]="usuario" type="usuario" id="usuario" placeholder="Ingresa tu usuario">
+                    <label for="usuario">Usuario</label>
+                    <input [(ngModel)]="usuario" name="usuario" type="text" id="usuario"
+                        placeholder="Ingresa tu usuario" required>
 
-                <label for="password-login">Contraseña</label>
-                <input [(ngModel)]="password" type="password" id="password-login" placeholder="Ingresa tu contraseña">
+                    <label for="password-login">Contraseña</label>
+                    <input [(ngModel)]="password" name="password" type="password" id="password-login"
+                        placeholder="Ingresa tu contraseña" required>
 
-                <button type="submit">Entrar</button>
-                <a routerLink='/register' routerLinkActive="router-link-active" >¿No tienes cuenta? <label  for="switch" style="cursor:pointer; color:#ffd;">Regístrate</label></a>
+                    <button type="submit">Entrar</button>
+
+                    <a routerLink="/register" routerLinkActive="router-link-active">
+                        ¿No tienes cuenta? <span style="cursor:pointer; color:#ffd;">Regístrate</span>
+                    </a>
+                </div>
+            </form>
+            
+            <div class="login-image">
+                <img src="https://cdn.dribbble.com/userupload/41795419/file/original-d774df282dc3781b7a95c72e1ed8f403.gif" alt="Imagen Login">
             </div>
+            
         </div>
+        @if(error){
+<div class="error">{{error}}</div>
+}
     </div>
 </body>
+

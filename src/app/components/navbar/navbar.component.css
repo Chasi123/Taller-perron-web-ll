@@ -107,3 +107,15 @@
   font-weight: bold;
   text-shadow: 0 0 8px #3f3f3f, 0 0 14px #212424;
 }
+
+button.logout-button {
+  font-size: 1rem;
+  color: #ffffffc9;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-shadow: 0 0 5px #b6b9b97e;
+}
+

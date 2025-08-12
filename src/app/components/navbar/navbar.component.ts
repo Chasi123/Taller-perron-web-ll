@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuutenticacionService } from '../../servicios/auutenticacion.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,5 +10,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
+  constructor(public authServicio: AuutenticacionService, private router: Router) { }
+  logout=()=> {
+    this.authServicio.logout();
+    this.router.navigate(['/login']);
+  }
 }

@@ -22,7 +22,7 @@ export class LoginComponent {
   login=()=>{
     const sessionExitosa = this.authServicio.login(this.usuario, this.password)
     if(sessionExitosa){
-      const redireccion = localStorage.getItem('redirectUrl') || '/login';
+      const redireccion = localStorage.getItem('redirectUrl') || '';
       localStorage.removeItem('redirectUrl');
       this.router.navigateByUrl(redireccion);
     }else{
