@@ -4,7 +4,7 @@
             <input type="checkbox" id="switch" hidden>
             <form [formGroup]="registroFrom" (ngSubmit)="registrar()" class="sign-up-container">
                 <h2>Registrarse</h2>
-                <label for="usuario">Nombre</label>
+                <label for="usuario">Usuario</label>
                 <input type="text" id="usuario" placeholder="Tu usuario" formControlName="usuario">
                 @if(registroFrom.get('usuario')?.touched && registroFrom.get('usuario')?.invalid){
                 <span class="error text-red-500 text-xs">El nombre es obligatorio</span>
