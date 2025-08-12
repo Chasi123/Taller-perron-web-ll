@@ -6,9 +6,9 @@
   padding: 1rem 0;
   z-index: 50;
   backdrop-filter: blur(20px);
-  background: rgba(15, 23, 42, 0.062); 
-  border-bottom: 1px solid rgba(36, 35, 35, 0.1);
-  box-shadow: 0 0 20px #3c3f3f28;
+  background: rgba(15, 23, 42, 0); 
+  border-bottom: 1px solid rgba(36, 35, 35, 0);
+  box-shadow: 0 0 20px #3c3f3f00;
   border-radius: 0 0 16px 16px;
 }
 
