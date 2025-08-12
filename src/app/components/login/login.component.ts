@@ -1,44 +1,32 @@
-// ...existing code...
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Component } from '@angular/core';
 import { AuutenticacionService } from '../../servicios/auutenticacion.service';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { Component } from '@angular/core';
-// ...existing code...
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink, FormsModule, HttpClientModule],
+  imports: [RouterLink,FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  usuario: string = '';
-  password: string = '';
-  error: string = '';
+  usuario:string='';
+  password:string='';
+  error:string='';
 
-  constructor(
-    private authServicio: AuutenticacionService,
-    private router: Router,
-    private http: HttpClient 
-  ) {}
+  constructor(private authServicio: AuutenticacionService,
+    private router: Router
+  ){}
 
-  login = () => {
-    this.http.get<{ [key: string]: { usuario: string; password: string } }>('https://app-fire-bf9d6-default-rtdb.firebaseio.com/usuario.json')
-      .subscribe(data => {
-        const usuarios = Object.values(data || {});
-        const encontrado = usuarios.find(u => u.usuario === this.usuario && u.password === this.password);
-        if (encontrado) {
-          const redireccion = localStorage.getItem('redirectUrl') || '/lista';
-          localStorage.removeItem('redirectUrl');
-          this.router.navigateByUrl(redireccion);
-        } else {
-          this.error = 'Usuario o contraseña incorrectos';
-        }
-      }, err => {
-        this.error = 'Error de conexión';
-      });
+  login=()=>{
+    const sessionExitosa = this.authServicio.login(this.usuario, this.password)
+    if(sessionExitosa){
+      const redireccion = localStorage.getItem('redirectUrl') || '/lista';
+      localStorage.removeItem('redirectUrl');
+      this.router.navigateByUrl(redireccion);
+    }else{
+      this.error='Usuario o contraseña incorrectos';
+    }
   }
 }
-// ...existing code...
