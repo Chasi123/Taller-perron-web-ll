@@ -16,7 +16,7 @@ export class RegistroUsuarioComponent {
   fb = inject(FormBuilder);
 
   registroFrom: FormGroup = this.fb.group({
-    nombre: ['', Validators.required],
+    usuario: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
     fechaNacimiento: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(6)]],

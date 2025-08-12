@@ -4,26 +4,35 @@
             <input type="checkbox" id="switch" hidden>
             <form [formGroup]="registroFrom" (ngSubmit)="registrar()" class="sign-up-container">
                 <h2>Registrarse</h2>
-                <label for="name">Nombre</label>
-                <input type="text" id="name" placeholder="Tu nombre">
-                @if(registroFrom.get('nombre')?.touched && registroFrom.get('nombre')?.invalid){
+                <label for="usuario">Nombre</label>
+                <input type="text" id="usuario" placeholder="Tu usuario" formControlName="usuario">
+                @if(registroFrom.get('usuario')?.touched && registroFrom.get('usuario')?.invalid){
                 <span class="error text-red-500 text-xs">El nombre es obligatorio</span>
-            }
+                }
                 <label for="email-signup">Correo</label>
-                <input type="email" id="email-signup" placeholder="Ingresa tu correo">
+                <input type="email" id="email-signup" placeholder="Ingresa tu correo" formControlName="email">
                 @if(registroFrom.get('email')?.touched && registroFrom.get('email')?.invalid){
                 <span class="error text-red-500 text-xs">El email no es el correcto</span>
+                }
+
+            <label for="fecha-nacimiento">Fecha de nacimiento</label>
+            <input type="date" id="fecha-nacimiento" formControlName="fechaNacimiento">
+            @if(registroFrom.get('fechaNacimiento')?.touched && registroFrom.get('fechaNacimiento')?.invalid){
+                <span class="error text-red-500 text-xs">La fecha de nacimiento es obligatoria</span>
             }
+
                 <label for="password-signup">Contraseña</label>
-                <input type="password" id="password-signup" placeholder="Crea una contraseña">
+                <input type="password" id="password-signup" placeholder="Crea una contraseña" formControlName="password">
                 @if(registroFrom.get('password')?.touched && registroFrom.get('password')?.invalid){
                 <span class="error text-red-500 text-xs">La contraseña no es la correcta</span>
-            }
+                }
                 <button type="submit">Crear Cuenta</button>
-                <a routerLink='/login' routerLinkActive="router-link-active">¿Ya tienes cuenta? <label for="switch" style="cursor:pointer; color:#ffd;">Inicia sesión</label></a>
+                <a routerLink='/login' routerLinkActive="router-link-active">¿Ya tienes cuenta? <label for="switch"
+                        style="cursor:pointer; color:#ffd;">Inicia sesión</label></a>
             </form>
             <div class="login-image">
-                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/8b8c2b43884319.57fffcd539e05.gif" alt="Imagen Login">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/8b8c2b43884319.57fffcd539e05.gif"
+                    alt="Imagen Login">
             </div>
         </div>
     </div>
