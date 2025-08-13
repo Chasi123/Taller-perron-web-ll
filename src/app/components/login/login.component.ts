@@ -1,32 +1,32 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuutenticacionService } from '../../servicios/auutenticacion.service';
-import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink,FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  usuario:string='';
-  password:string='';
-  error:string='';
+  usuario = '';
+  password = '';
+  error = '';
 
-  constructor(private authServicio: AuutenticacionService,
-    private router: Router
-  ){}
+  constructor(private authServicio: AuutenticacionService, private router: Router) {}
 
-  login=()=>{
-    const sessionExitosa = this.authServicio.login(this.usuario, this.password)
-    if(sessionExitosa){
-      const redireccion = localStorage.getItem('redirectUrl') || '/lista';
-      localStorage.removeItem('redirectUrl');
-      this.router.navigateByUrl(redireccion);
-    }else{
-      this.error='Usuario o contraseña incorrectos';
-    }
+  login() {
+    this.authServicio.login(this.usuario, this.password).subscribe(exito => {
+      if (exito) {
+        localStorage.setItem('user', 'true');
+        this.router.navigate(['/home']); 
+      } else {
+        this.error = 'Usuario o contraseña incorrectos';
+      }
+    });
   }
+  
 }

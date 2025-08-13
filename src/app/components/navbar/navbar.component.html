@@ -18,10 +18,19 @@
         <li><a routerLink="/productos" routerLinkActive="active" class="navbar-link">Productos</a></li>
         <li><a routerLink="/sobre-nosotros" routerLinkActive="active" class="navbar-link">Sobre Nosotros</a></li>
         <li><a routerLink="/contacto" routerLinkActive="active" class="navbar-link">Contactos</a></li>
-        <li>@if(!authServicio.sesionIniciada()){ <a routerLink="/login"  routerLinkActive="active" class="navbar-link">Iniciar Sesion</a>}</li>
-        <button class="logout-button" (click)="logout()">Cerrar Sesión</button>
+        <ul>
+          
+          <li *ngIf="!authServicio.sesionIniciada()">
+            <a routerLink="/login" class="navbar-link">Iniciar Sesión</a>
+          </li>
+
+          
+          <li *ngIf="authServicio.sesionIniciada()">
+            <button (click)="logout()" class="logout-button">Cerrar Sesión</button>
+          </li>
+        </ul>
+
       </ul>
     </div>
   </div>
 </nav>
-
