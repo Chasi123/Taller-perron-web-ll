@@ -10,6 +10,7 @@ import { RegistroUsuarioComponent } from './components/registro-usuario/registro
 import { loginGuard } from './guards/login.guard';
 import { registroGuard } from './guards/registro.guard';
 import { autenticaGuard } from './guards/autentica.guard';
+import { RegistroProductosComponent } from './components/registro-productos/registro-productos.component';
 
 
 export const routes: Routes = [
@@ -18,6 +19,7 @@ export const routes: Routes = [
     {path:"sobre-nosotros", component : NosotrosComponent},
     {path:"contacto", component : ContactoComponent, canActivate:[autenticaGuard]},
     {path:"lista", component : ListaClientesComponent},
+    {path:"registro", component : RegistroProductosComponent},
     {path:'clientes/:id', component:ActualizarComponent},
     {path:"login", component: LoginComponent, canMatch:[loginGuard]},
     {path:"register", component: RegistroUsuarioComponent, canDeactivate:[registroGuard]},

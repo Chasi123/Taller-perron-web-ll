@@ -19,19 +19,18 @@ export class ActualizarComponent {
   id:string="";
   cliente: any={nombre:'', apellido:'', direccion:'', email:''}
 
-  ngOnInit():void{
-    this.ruta.params.subscribe(params =>{
-      this.id=params['id']
-      this.servicioCliente.buscarCliente(this.id).subscribe(cliente =>{
-        this.cliente=cliente;
-      })
-    })
+  ngOnInit(){
+    this.id = this.ruta.snapshot.params['id'];
+    this.servicioCliente.getCliente().subscribe(data => {
+      this.cliente = data.find((c: any) => c.id === this.id);
+    });
   }
 
-  editar(formulario:any):void{
-    const clienteActualizado={...formulario.value, id:this.id};
-    this.servicioCliente.editarCliente(this.id, clienteActualizado).subscribe(() =>{
-      this.router.navigate(['/lista']);
-  });
+  actualizarCliente(formularios: any){
+  this.servicioCliente.actualizarCliente(this.id, formularios.value)
+    .subscribe(() => {
+      this.router.navigate(['/clientes']);
+    });
 }
+
 }

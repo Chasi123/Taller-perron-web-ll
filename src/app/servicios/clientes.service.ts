@@ -8,24 +8,17 @@ export class ClientesService {
 
   constructor(private http: HttpClient) { }
 
-  private API_CLIENTES="https://app-fire-bf9d6-default-rtdb.firebaseio.com"
+  private API_SPRING="http://localhost:8080/clientes"
 
-  guardarCliente(cliente:any):Observable<any> {
-    return this.http.post(`${this.API_CLIENTES}/clientes.json`, cliente);
+  postCliente(cliente: any): Observable<any>{
+    return this.http.post(`${this.API_SPRING}/guardarCliente`, cliente)
   }
 
-  getCliente():Observable<any>{
-      return this.http.get(`${this.API_CLIENTES}/clientes.json`);
+  getCliente(): Observable<any>{
+    return this.http.get(`${this.API_SPRING}`);
   }
 
-  buscarCliente(id:string):Observable<any>{
-    return this.http.get(`${this.API_CLIENTES}/clientes/${id}.json`);
-  }
-  eliminarCliente(id:string):Observable<any>{
-    return this.http.delete(`${this.API_CLIENTES}/clientes/${id}.json`);
-  }
-
-  editarCliente(id:string, cliente:any):Observable<any>{
-    return this.http.put(`${this.API_CLIENTES}/clientes/${id}.json`, cliente);
+  actualizarCliente(id: string, cliente: any): Observable<any>{
+    return this.http.put(`${this.API_SPRING}/actualizarCliente/${id}`, cliente);
   }
 }

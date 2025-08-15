@@ -12,7 +12,11 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   constructor(public authServicio: AuutenticacionService, private router: Router) {}
+  menuAbierto: boolean = false;
 
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
+  }
   logout() {
     this.authServicio.logout();
     this.router.navigate(['/login']);

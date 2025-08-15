@@ -6,7 +6,7 @@
     </div>
 </header>
 <section class="formulario">
-    <form (ngSubmit)="editar(formulario)" #formulario="ngForm" class="form">
+    <form (ngSubmit)="actualizarCliente(formulario)" #formulario="ngForm"  class="form">
         <h2>Actualizacion De Datos</h2>
         <label for="nombre">Nombre:</label>
         <input [(ngModel)]="cliente.nombre"  type="text" id="nombre" name="nombre" required>

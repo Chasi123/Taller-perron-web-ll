@@ -81,7 +81,7 @@ header .author img{
         var(--url) var(--left),
         url(https://i.postimg.cc/3NjSR4Zq/mockup.png) 0 0;
     background-size: auto 100%;
-    width: 280px;
+    width: 220px;
     aspect-ratio: 2 / 4;
     background-blend-mode: multiply;
     transition: 0.8s;
@@ -111,23 +111,23 @@ header .author img{
 }
 .rock img:nth-child(1){
     position: absolute;
-    height: 170px;
+    height: 140px;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 30px;
+    bottom: 70px;
     transition: 0.7s;
     z-index: 1;
 }
 .rock img:nth-child(2){
     position: absolute;
-    height: 49%;
+    height: 40%;
     left: 0;
     bottom: 0;
     transition: 0.7s;
 }
 .rock img:nth-child(3){
     position: absolute;
-    height: 90%;
+    height: 70%;
     right: 0;
     bottom: -100px;
     rotate: -25deg;
@@ -159,6 +159,121 @@ header .author img{
         width: 100%;
     }
 
+}
+
+@media screen and (max-width: 1023px) {
+    .soda {
+        width: 400px;
+    }
+
+    header h1 {
+        font-size: 10vw;
+    }
+
+    header h3 {
+        font-size: 4vw;
+    }
+
+    header .author img {
+        width: 200px;
+    }
+
+    .product {
+        width: 400px;
+        bottom: 120px;
+    }
+
+    .rock img:nth-child(1) {
+        height: 140px;
+        bottom: 20px;
+    }
+
+    .rock img:nth-child(2) {
+        height: 45%;
+    }
+
+    .rock img:nth-child(3) {
+        height: 70%;
+        bottom: -80px;
+    }
+}
+
+/* Móviles */
+@media screen and (max-width: 767px) {
+    header h1 {
+        font-size: 14vw;
+    }
+
+    header h3 {
+        font-size: 6vw;
+    }
+
+    header img {
+        display: none;
+    }
+
+    header .author {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .soda {
+        width: 250px;
+    }
+
+    .product {
+        width: 250px;
+        bottom: 100px;
+    }
+
+    .rock img:nth-child(1) {
+        height: 100px;
+        bottom: 10px;
+    }
+
+    .rock img:nth-child(2) {
+        height: 35%;
+    }
+
+    .rock img:nth-child(3) {
+        height: 50%;
+        bottom: -50px;
+    }
+}
+
+/* Smartphones muy pequeños */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 16vw;
+    }
+
+    header h3 {
+        font-size: 7vw;
+    }
+
+    .product {
+        width: 200px;
+        bottom: 80px;
+    }
+
+    .soda {
+        width: 200px;
+    }
+
+    .rock img:nth-child(1) {
+        height: 80px;
+        bottom: 5px;
+    }
+
+    .rock img:nth-child(2) {
+        height: 30%;
+    }
+
+    .rock img:nth-child(3) {
+        height: 40%;
+        bottom: -30px;
+    }
 }
 
 .formulario {

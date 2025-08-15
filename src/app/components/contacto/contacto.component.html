@@ -37,7 +37,7 @@
     </div>
 </header>
 <section class="formulario">
-    <form (ngSubmit)="agregarCliente(formulario)" #formulario="ngForm" class="form">
+    <form (ngSubmit)="guardarCliente(formulario)" #formulario="ngForm"  class="form">
         <h2>Formulario de Contacto</h2>
         <label for="nombre">Nombre:</label>
         <input [(ngModel)]="nombre"  type="text" id="nombre" name="nombre" required>

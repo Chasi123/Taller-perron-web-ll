@@ -18,8 +18,8 @@ export class ContactoComponent {
     direccion:string='';
     email:string='';
 
-  agregarCliente(formulario:any){
-    this.servicioCliente.guardarCliente(formulario.value).subscribe(()=>{
+  guardarCliente(formularios: any){
+    this.servicioCliente.postCliente(formularios.value).subscribe(()=>{
       window.location.reload();
     })
   }

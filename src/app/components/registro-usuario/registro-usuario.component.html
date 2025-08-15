@@ -2,7 +2,7 @@
     <div class="banner">
         <div class="form-container">
             <input type="checkbox" id="switch" hidden>
-            <form [formGroup]="registroFrom" (ngSubmit)="registrar()" class="sign-up-container">
+            <form (ngSubmit)="guardar(formulario)" #formulario="ngForm" [formGroup]="registroFrom" (ngSubmit)="registrar()" class="sign-up-container">
                 <h2>Registrarse</h2>
                 <label for="usuario">Usuario</label>
                 <input type="text" id="usuario" placeholder="Tu usuario" formControlName="usuario">

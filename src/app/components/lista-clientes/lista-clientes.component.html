@@ -20,12 +20,14 @@
           <td class="p-5">{{cliente.direccion}}</td>
           <td class="p-5">
             <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded mr-2" [routerLink]="['/clientes', cliente.id]">Editar</button>
-            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded" (click)="eliminar(cliente.id)">Eliminar</button>
           </td>
         </tr>
         }
       </tbody>
     </table>
   </div>
+  <app-producto></app-producto>
 </div>
 </div>
+
+

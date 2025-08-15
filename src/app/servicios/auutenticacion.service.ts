@@ -11,7 +11,6 @@ export class AuutenticacionService {
 
   constructor(private http: HttpClient) {}
 
-  // Verifica usuario y contraseña
   login(usuario: string, password: string): Observable<boolean> {
     return this.http.get<any>(this.baseUrl).pipe(
       map((data) => {

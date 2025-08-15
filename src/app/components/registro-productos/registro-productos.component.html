@@ -1,0 +1,11 @@
+<div class="body">
+    <form (ngSubmit)="guardar(formulario)" #formulario='ngForm' class="form">
+  <input [(ngModel)]="nombre" name="nombre" placeholder="Enter your name" class="input" type="text">
+  <input [(ngModel)]="precio" name="precio" placeholder="Enter your precio" class="input" type="text">
+  <input [(ngModel)]="stock" name="stock" placeholder="stock" class="input" type="text">
+
+  <button>Registrar</button>
+  <br>
+  <a routerLink="/lista" routerLinkActive="active">Regresar</a>
+</form>
+</div>

@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { RegistroService } from '../../servicios/registro.service';
 
 @Component({
   selector: 'app-registro-usuario',
@@ -11,6 +12,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './registro-usuario.component.css'
 })
 export class RegistroUsuarioComponent {
+
+  constructor(private registroServicios: RegistroService){}
+
   enviado = false;
   private http = inject(HttpClient);
   fb = inject(FormBuilder);
@@ -50,4 +54,10 @@ export class RegistroUsuarioComponent {
     valor => String(valor).trim() !== ''
   );
 };
+
+   guardar(formulario: any){
+    this.registroServicios.postUsuario(formulario.value).subscribe(()=>{
+      window.location.reload();
+    })
+  }
 }

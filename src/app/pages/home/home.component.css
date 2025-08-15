@@ -23,9 +23,6 @@
   background-color: #021879;
 }
 
-.bg-green {
-  background-color: #36ab2f;
-}
 .bg-orange {
   background-color: #f08710;
 }
@@ -38,8 +35,9 @@
 
 html,
 body {
-  height: 100vh;
-  overflow: hidden;
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .row {
@@ -411,75 +409,90 @@ transition-delay: 1.2s;
 
 
 
-
-
-
-
-
 /* galeria */
-
-.galeria > img{
+.galeria > img {
   border-radius: 10px;
   width: 100%;
   height: auto;
   box-shadow: 0px 0px 30px #000;
 }
 
-.galeria{
+.galeria {
   display: grid;
-  grid-template-columns: 
-  repeat(
-    auto-fit,
-    minmax(150px, 1fr)
-    );
-    gap: 32px;
-    margin-top: 50px;
-    margin: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 32px;
+  margin: 25px;
+  margin-top: 50px;
 }
-
 
 .galeria img:hover {
-    transform: scale(1.08); 
-    transition: .5s;
-    box-shadow: 0px 0px 40px #000;
+  transform: scale(1.08); 
+  transition: .5s;
+  box-shadow: 0px 0px 40px #000;
 }
-
-
-
-
-
-
-
-
-
 
 .col1 {
   width: 50%;
   position: relative;
 }
-.fullseparado{
 
+.fullseparado {
   height: 100vh;
-
 }
 
 .fila {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-
 }
 
-.cartas{
+@media (max-width: 1024px) {
+  .galeria {
+    gap: 20px;
+  }
+  .col1 {
+    width: 100%;
+  }
+  .fullseparado {
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .galeria {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin: 15px;
+  }
+  .col1 {
+    width: 100%;
+  }
+  .fila {
+    flex-direction: column;
+  }
+  .fullseparado {
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
+
+
+
+
+
+.cartas {
   display: flex;
-  flex-direction: row;
-    
+  flex-wrap: wrap; 
+  gap: 20px;
+  justify-content: center; 
 }
+
 .parent {
-  width: 300px;
+  width: 100%;
+  max-width: 300px; 
   padding: 20px;
   perspective: 1000px;
-  
 }
 
 .card {
@@ -487,14 +500,12 @@ transition-delay: 1.2s;
   border-radius: 10px; 
   border: 3px solid rgb(255, 255, 255);
   transform-style: preserve-3d;
-  
   background-size: 60px 60px;
   background-position: 0 0, 0 0;
   background-color: #f0f0f0;
   width: 100%;
   box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
   transition: all 0.5s ease-in-out;
-  
 }
 
 .card:hover {
@@ -513,7 +524,7 @@ transition-delay: 1.2s;
 .content-box .card-title {
   display: inline-block;
   color: black;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 900;
   transition: all 0.5s ease-in-out;
   transform: translate3d(0px, 0px, 50px);
@@ -525,8 +536,8 @@ transition-delay: 1.2s;
 
 .content-box .card-content {
   margin-top: 10px;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 00;
   color: #000;
   transition: all 0.5s ease-in-out;
   transform: translate3d(0px, 0px, 30px);
@@ -543,8 +554,7 @@ transition-delay: 1.2s;
   font-weight: 900;
   font-size: 9px;
   text-transform: uppercase;
-  color: rgb(46, 48, 49);
-  /* border-radius: 5px; */
+  color: rgb(0, 0, 0);
   background: rgb(148, 142, 142);
   padding: 0.5rem 0.7rem;
   transition: all 0.5s ease-in-out;
@@ -563,7 +573,6 @@ transition-delay: 1.2s;
   width: 60px;
   background: white;
   border: 1px solid rgb(94, 97, 99);
-  /* border-radius: 10px; */
   padding: 10px;
   transform: translate3d(0px, 0px, 80px);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
@@ -585,4 +594,55 @@ transition-delay: 1.2s;
   font-weight: 900;
   color: rgb(67, 74, 77);
 }
- 
+
+@media (max-width: 1024px) {
+  .cartas {
+    gap: 15px;
+  }
+  .parent {
+    max-width: 250px;
+  }
+  .content-box {
+    padding: 40px 20px 20px 20px;
+  }
+  .content-box .card-title {
+    font-size: 16px;
+  }
+  .content-box .card-content {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cartas {
+    flex-direction: column; 
+    align-items: center;
+  }
+  .parent {
+    max-width: 70%; 
+    padding: 15px;
+  }
+  .content-box {
+    padding: 30px 15px 15px 15px;
+  }
+  .content-box .card-title {
+    font-size: 14px;
+  }
+  .content-box .card-content {
+    font-size: 12px;
+  }
+  .content-box .see-more {
+    font-size: 8px;
+  }
+  .date-box {
+    height: 50px;
+    width: 50px;
+    top: 20px;
+    right: 20px;
+  }
+  .date-box .date {
+    font-size: 16px;
+  }
+}
+
+

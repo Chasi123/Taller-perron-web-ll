@@ -12,25 +12,32 @@
       </button>
     </div>
 
-    <div class="navbar-menu">
-      <ul class="navbar-links">
-        <li><a routerLink="/" routerLinkActive="active" class="navbar-link">Inicio</a></li>
-        <li><a routerLink="/productos" routerLinkActive="active" class="navbar-link">Productos</a></li>
-        <li><a routerLink="/sobre-nosotros" routerLinkActive="active" class="navbar-link">Sobre Nosotros</a></li>
-        <li><a routerLink="/contacto" routerLinkActive="active" class="navbar-link">Contactos</a></li>
-        <ul>
-          
-          <li *ngIf="!authServicio.sesionIniciada()">
-            <a routerLink="/login" class="navbar-link">Iniciar Sesión</a>
-          </li>
+    <div class="navbar-menu" [ngClass]="{'open': menuAbierto}">
+  <ul class="navbar-links">
+    <li><a routerLink="/" routerLinkActive="active" class="navbar-link">Inicio</a></li>
+    <li><a routerLink="/productos" routerLinkActive="active" class="navbar-link">Productos</a></li>
+    <li><a routerLink="/sobre-nosotros" routerLinkActive="active" class="navbar-link">Sobre Nosotros</a></li>
+    <li><a routerLink="/contacto" routerLinkActive="active" class="navbar-link">Contactos</a></li>
 
-          
-          <li *ngIf="authServicio.sesionIniciada()">
-            <button (click)="logout()" class="logout-button">Cerrar Sesión</button>
-          </li>
-        </ul>
+    <li *ngIf="!authServicio.sesionIniciada()">
+      <a routerLink="/login" class="navbar-link">Iniciar Sesión</a>
+    </li>
 
-      </ul>
-    </div>
+    <li *ngIf="authServicio.sesionIniciada()">
+      <button (click)="logout()" class="logout-button">Cerrar Sesión</button>
+    </li>
+  </ul>
+</div>
   </div>
 </nav>
+
+<button class="navbar-toggle" type="button" (click)="toggleMenu()">
+  <span class="sr-only">Open main menu</span>
+  <svg class="toggle-icon" viewBox="0 0 20 20" fill="currentColor">
+    <path fill-rule="evenodd"
+      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+      clip-rule="evenodd" />
+  </svg>
+</button>
+
+
